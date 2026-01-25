@@ -12,7 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.complited{
+  background-color: #747bff;
+}
 a {
   font-weight: 500;
   color: #646cff;
