@@ -2,8 +2,9 @@ import { API_URL } from "../../constants";
 import { useEffect, useState } from "react";
 import { QuestionCardList } from "../../components/QuestionCardList";
 import { Loader } from "../../components/Loader/Loader";
-
+import cls from "./HomePage.module.css";
 import { useFetch } from "../../hooks/useFetch";
+import { SearchInput } from "../../components/SearchInput";
 
 export const HomePage = () => {
     const [questions, setQustion] = useState([]);
@@ -20,12 +21,13 @@ export const HomePage = () => {
     }, []);
 
     const inputValueHandler = (e) => {
-        console.log(inputValue);
         setInputValue(e.target.value);
     };
     return (
         <>
-            <input type="text" value={inputValue} onChange={inputValueHandler} />
+            <div className={cls.controlContainers}>
+                <SearchInput value={inputValue} onChange={inputValueHandler} />
+            </div>
             {isLoading && <Loader />}
             {error && <p>{error}</p>}
             <QuestionCardList cards={questions} />
