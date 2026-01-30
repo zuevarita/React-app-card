@@ -1,8 +1,8 @@
-import cls from "./Loader.module.css"
+import cls from "./Loader.module.css";
 export const Loader = () => {
-    return (  
+    return (
         <div className={cls.backdrop}>
             <span className={cls.loader}></span>
         </div>
     );
-}
+};
