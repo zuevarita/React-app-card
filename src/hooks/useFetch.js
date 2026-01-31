@@ -8,7 +8,7 @@ export const useFetch = (callback) => {
     const fetchFn = async (arg) => {
         try {
             setIsLoading(true);
-            setError(true);
+            setError("");
             await delayFn();
 
             const response = await callback(arg);
