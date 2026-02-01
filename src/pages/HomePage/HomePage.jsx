@@ -6,6 +6,7 @@ import cls from "./HomePage.module.css";
 import { useFetch } from "../../hooks/useFetch";
 import { SearchInput } from "../../components/SearchInput";
 import { Button } from "../../components/Button";
+import { toast } from "react-toastify";
 
 const DEFAULT_PER_PAGE = 10;
 
@@ -26,6 +27,9 @@ export const HomePage = () => {
     });
     useEffect(() => {
         getQuestions(`react${searchParams}`);
+        if (searchParams === `?_page=1&_per_page=${DEFAULT_PER_PAGE}`) {
+            toast("Данные получены");
+        }
     }, [searchParams]);
 
     const inputValueHandler = (e) => {
