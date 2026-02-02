@@ -564,18 +564,6 @@
       "resources": [],
       "level": 1,
       "completed": false
-    },
-    {
-      "id": "f400",
-      "question": "hello",
-      "answer": "how are ypu",
-      "description": "how are ypu",
-      "resources": [
-        "https://chat.deepseek.com/a/chat/s/a4238d0b-bb5c-4c0c-87fb-2df87c3e5e9d",
-        " https://github.com/zuevarita/React-app-card"
-      ],
-      "level": 1,
-      "completed": false
     }
   ]
 }
