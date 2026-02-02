@@ -24,11 +24,16 @@ const createCardAction = async (_currentState, formData) => {
                 editDate: undefined,
             }),
         });
+
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
         const question = await response.json();
         toast.success("New question is created");
         return isClearForm ? {} : question;
     } catch (error) {
         toast.error(error.message);
+        return {};
     }
 };
 export const AddQuestionPage = () => {
