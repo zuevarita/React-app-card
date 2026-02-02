@@ -1,3 +1,3 @@
-export const delayFn = ()=>{
-    return new Promise((res) => setTimeout(res, 1000))
-}
+export const delayFn = () => {
+    return new Promise((res) => setTimeout(res, 1000));
+};
