@@ -1,10 +1,10 @@
 import cls from "./AddQuestionPage.module.css";
-import { Button } from "../../components/Button";
 import { useActionState } from "react";
 import { toast } from "react-toastify";
 import { delayFn } from "../../helpers/DelayFn";
 import { API_URL } from "../../constants";
 import { Loader } from "../../components/Loader";
+import { QuestionForm } from "../../components/QuestionForm";
 
 const createCardAction = async (_currentState, formData) => {
     try {
@@ -44,76 +44,7 @@ export const AddQuestionPage = () => {
             {isPending && <Loader />}
             <h1 className={cls.formTitle}>Add new question</h1>
             <div className={cls.formContainer}>
-                <form action={formAction} className={cls.form}>
-                    <div className={cls.formControl}>
-                        <label htmlFor="questionField">Question: </label>
-                        <textarea
-                            defaultValue={state.question}
-                            name="question"
-                            id="questionField"
-                            cols="30"
-                            rows="2"
-                            required
-                            placeholder="please enter a question"
-                        ></textarea>
-                    </div>
-                    <div className={cls.formControl}>
-                        <label htmlFor="answerField">Short Answer: </label>
-                        <textarea
-                            defaultValue={state.answer}
-                            name="answer"
-                            id="answerField"
-                            cols="30"
-                            rows="2"
-                            required
-                            placeholder="please enter a short answer"
-                        ></textarea>
-                    </div>
-                    <div className={cls.formControl}>
-                        <label htmlFor="descriptionField">Description: </label>
-                        <textarea
-                            defaultValue={state.description}
-                            name="description"
-                            id="descriptionField"
-                            cols="30"
-                            rows="5"
-                            required
-                            placeholder="please enter a description"
-                        ></textarea>
-                    </div>
-                    <div className={cls.formControl}>
-                        <label htmlFor="resourcesField">Resources: </label>
-                        <textarea
-                            defaultValue={state.resources}
-                            name="resources"
-                            id="resourcesField"
-                            cols="30"
-                            rows="2"
-                            placeholder="please enter a resources separeted by commas"
-                        ></textarea>
-                    </div>
-                    <div className={cls.formControl}>
-                        <label htmlFor="levelField">Level: </label>
-                        <select name="level" id="levelField" defaultValue={state.level}>
-                            <option disabled>Question Level</option>
-                            <hr />
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
-                    <label htmlFor="clearFormField" className={cls.clearFormControl}>
-                        <input
-                            className={cls.checkBox}
-                            type="checkbox"
-                            name="clearForm"
-                            id="clearFormField"
-                            defaultChecked={state.clearForm}
-                        />
-                        <span>Clear form after submiting?</span>
-                    </label>
-                    <Button disabled={isPending}>Add question</Button>
-                </form>
+                <QuestionForm formAction={formAction} state={state} isPending={isPending} submitBtnText="Add Question" />
             </div>
         </>
     );
