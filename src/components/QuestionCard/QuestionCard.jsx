@@ -19,7 +19,7 @@ export const QuestionCard = ({ card }) => {
                 <label>short answer</label>
                 <p className={cls.cardAnswer}>{card.answer}</p>
             </div>
-            <Button onClick={() => navigate(`/question/${card.id}`)}> View</Button>
+            <Button onClick={() => navigate(`/question/${card.id}`)}>View</Button>
         </div>
     );
 };

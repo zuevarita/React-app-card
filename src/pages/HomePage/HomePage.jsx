@@ -39,7 +39,6 @@ export const HomePage = () => {
     const paginationHandler = (e) => {
         if (e.target.tagName === "BUTTON") {
             setsearchParams(`?_page=${e.target.textContent}&_per_page=${countSelectValue}&${sortSelectValue}`);
-            console.log(controlContainersRef.current.scrollIntoView({ behavior: "smooth" }));
         }
     };
 
