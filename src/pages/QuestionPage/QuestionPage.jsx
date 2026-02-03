@@ -61,7 +61,7 @@ export const QuestionPage = () => {
                         {card?.editDate && <p className={cls.editDate}>Edited: {card.editDate}</p>}
                     </div>
                     <h5 className={cls.cardTitle}>{card.question}</h5>
-                    <p className={cls.cardDescription}>{card.descriprion}</p>
+                    <p className={cls.cardDescription}>{card.description}</p>
                     <div className={cls.cardAnswers}>
                         <label>short answer</label>
                         <p className={cls.cardAnswer}>{card.answer}</p>
