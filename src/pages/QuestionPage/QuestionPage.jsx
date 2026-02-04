@@ -6,6 +6,7 @@ import { useEffect, useId, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { API_URL } from "../../constants";
 import { Loader, SmallLoader } from "../../components/Loader";
+import { useAuth } from "../../hooks/useAuth";
 
 export const QuestionPage = () => {
     const navigate = useNavigate();
@@ -13,6 +14,7 @@ export const QuestionPage = () => {
     const params = useParams();
     const [isChecked, setIsChecked] = useState(false);
     const [card, setCard] = useState(null);
+    const { isAuth } = useAuth();
 
     const [fetchCard, isCardLoading] = useFetch(async () => {
         const response = await fetch(`${API_URL}/react/${params.id}`);
@@ -94,9 +96,12 @@ export const QuestionPage = () => {
                         {isCardUpdating && <SmallLoader />}
                     </label>
 
-                    <Button isDisabled={isCardUpdating} onClick={() => navigate(`/editquestion/${card.id}`)}>
-                        Edit Question
-                    </Button>
+                    {isAuth && (
+                        <Button isDisabled={isCardUpdating} onClick={() => navigate(`/editquestion/${card.id}`)}>
+                            Edit Question
+                        </Button>
+                    )}
+
                     <Button isDisabled={isCardUpdating} onClick={() => navigate(`/`)}>
                         Back
                     </Button>
