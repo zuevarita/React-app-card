@@ -29,16 +29,17 @@ export default defineConfig([
                 version: "detect",
             },
         },
-        "linebreak-style": ["error", "windows"],
         rules: {
             "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],
             "react/jsx-no-target-blank": "warn",
+            "linebreak-style": ["error", "windows"],
             "prettier/prettier": [
                 "error",
                 {
                     singleQuote: false,
                     printWidth: 130,
                     tabWidth: 4,
+                    endOfLine: "crlf",
                 },
             ],
         },

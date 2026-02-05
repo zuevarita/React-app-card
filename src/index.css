@@ -1,4 +1,15 @@
 :root {
+  --main-bg-color: #23272F;
+  --text-color: #fff;
+
+  --btn-bg-color: #383b3f;
+  --btn-text-color: #fff;
+  --btn-border-color: #2f2f2f;
+
+  --card-bg-color: #343A46;
+
+  --green-color: #219679;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -12,59 +23,63 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.complited{
-  background-color: #747bff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: inherit;
 }
-a:hover {
-  color: #535bf2;
-}
+
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  color: var(--text-color);
+  background-color: var(--main-bg-color);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+.darkLayout{
+  --text-color: #fff;
+  --main-bg-color: #23272F;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  --btn-bg-color: #16444f;
+  --btn-text-color: #57C4DC;
+  --btn-border-color: #2f2f2f;
+
+  --card-bg-color: #343a46;
+
+  --green-color: #219679;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --text-color: #000;
+    --main-bg-color: #fff;
+
+    --btn-bg-color: #383b3f;
+    --btn-text-color: #fff;
+    --btn-border-color: #fff;
+
+    --card-bg-color: #ebedf0;
+
+    --green-color: #219679;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #fff;
+    --main-bg-color: #23272F;
+
+    --btn-bg-color: #16444f;
+    --btn-text-color: #57C4DC;
+    --btn-border-color: #2f2f2f;
+
+    --card-bg-color: #343a46;
+
+    --green-color: #219679;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+
 }
