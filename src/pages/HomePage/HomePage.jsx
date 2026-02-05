@@ -27,9 +27,6 @@ export const HomePage = () => {
     });
     useEffect(() => {
         getQuestions(`react${searchParams}`);
-        if (searchParams === `?_page=1&_per_page=${DEFAULT_PER_PAGE}`) {
-            toast("Данные получены");
-        }
     }, [searchParams]);
 
     const inputValueHandler = (e) => {

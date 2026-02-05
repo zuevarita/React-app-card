@@ -40,6 +40,19 @@ body {
   background-color: var(--main-bg-color);
 }
 
+.darkLayout{
+  --text-color: #fff;
+  --main-bg-color: #23272F;
+
+  --btn-bg-color: #16444f;
+  --btn-text-color: #57C4DC;
+  --btn-border-color: #2f2f2f;
+
+  --card-bg-color: #343a46;
+
+  --green-color: #219679;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --text-color: #000;
