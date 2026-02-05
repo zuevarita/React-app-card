@@ -3,8 +3,8 @@ import { MainLayout } from "./components/MainLayout";
 import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { QuestionPage } from "./pages/QuestionPage";
-import { AddQuestionPage } from "./pages/AddQuestionPage";
-import { EditQuestionPage } from "./pages/EditQuestionPage";
+import { AddQuestionPageLazy } from "./pages/AddQuestionPage";
+import { EditQuestionPageLazy } from "./pages/EditQuestionPage";
 import { AuthProvider } from "./auth/AuthProvider";
 import { useAuth } from "./hooks/useAuth";
 import { ForbiddenPage } from "./pages/ForbiddenPage";
@@ -27,8 +27,8 @@ function App() {
                         <Route path="/question/:id" element={<QuestionPage />} />
 
                         <Route element={<ProtectedRoutes />}>
-                            <Route path="/addquestion" element={<AddQuestionPage />} />
-                            <Route path="/editquestion/:id" element={<EditQuestionPage />} />
+                            <Route path="/addquestion" element={<AddQuestionPageLazy />} />
+                            <Route path="/editquestion/:id" element={<EditQuestionPageLazy />} />
                         </Route>
 
                         <Route path="*" element={<NotFoundPage />} />
