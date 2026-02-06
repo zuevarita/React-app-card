@@ -1,6 +1,6 @@
 import { useActionState } from "react";
 import cls from "./EditQuestionPage.module.css";
-import { delayFn } from "../../helpers/DelayFn";
+import { delayFn } from "../../helpers/delayFn";
 import { QuestionForm } from "../../components/QuestionForm";
 import { API_URL } from "../../constants";
 import { toast } from "react-toastify";

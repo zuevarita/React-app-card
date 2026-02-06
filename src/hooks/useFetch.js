@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { delayFn } from "../helpers/DelayFn";
+import { delayFn } from "../helpers/delayFn";
 import { toast } from "react-toastify";
 
 export const useFetch = (callback) => {
